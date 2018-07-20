@@ -1,0 +1,27 @@
+version: "3.4"
+services:
+ netflix-eureka-naming-server-image:
+  image: netflix-eureka-naming-server-image
+  ports:
+   - "8085:8085"
+
+ netflix-zuul-api-gateway-server-image:
+  image: netflix-zuul-api-gateway-server-image
+  ports:
+   - "8086:8086"
+  depends_on:
+  - netflix-eureka-naming-server-image
+   
+ order-service-image:
+  image: order-service-image
+  ports:
+   - "8083:8083"
+  depends_on:
+   - netflix-eureka-naming-server-image
+   
+ customer-service-image:
+  image: customer-service-image
+  ports:
+   - "8080:8080"
+  depends_on:
+   - netflix-eureka-naming-server-image
