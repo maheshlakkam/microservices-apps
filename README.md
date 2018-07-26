@@ -1,4 +1,4 @@
-# Microservice POC using Spring Cloud and Dockers
+# Microservices using Spring Cloud and Dockers
 *************************************************
 
 Follow below instructions to create docker images and containers.
