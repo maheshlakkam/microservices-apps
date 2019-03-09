@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.microservice.model.Order;
 @Component
 /*@FeignClient(name="order-service", url="localhost:8083")*/
-@FeignClient(name="netflix-zuul-api-gateway-server")
+@FeignClient(name="netflix-zuul-api-gateway-server",fallbackFactory=OrderServiceFallBackFactory.class)
 @RibbonClient(name="order-service")
 public interface OrderServiceProxy {
 	
