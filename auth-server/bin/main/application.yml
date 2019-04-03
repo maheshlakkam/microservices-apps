@@ -1,0 +1,9 @@
+server:
+  port: 8282
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8085/eureka/
+    healthcheck:
+      enabled: true 
+     
